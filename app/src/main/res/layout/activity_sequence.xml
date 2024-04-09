@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    android:padding="5dp"
+    tools:context=".SequenceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/match_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Match Score:"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/match_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@android:drawable/btn_dropdown"
+                android:entries="@array/match_values"
+                android:spinnerMode="dialog"
+                android:theme="@style/SpinnerItem" />
+
+            <TextView
+                android:id="@+id/mismatch_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MismatchScore:"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/mismatch_spinner"
+                style="@style/SpinnerItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@android:drawable/btn_dropdown"
+                android:entries="@array/mismatch_values"
+                android:spinnerMode="dialog"
+                android:theme="@style/SpinnerItem" />
+
+            <TextView
+                android:id="@+id/gap_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gap Penalty:"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/gap_spinner"
+                style="@style/SpinnerItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@android:drawable/btn_dropdown"
+                android:entries="@array/gap_values"
+                android:foregroundTint="#FF0000"
+                android:spinnerMode="dialog"
+                android:theme="@style/SpinnerItem" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/seq_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/query_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Query Sequence:"
+                app:layout_constraintBottom_toTopOf="@+id/querySeqArea"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/querySeqArea"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:gravity="top"
+                android:hint="ATGCAT..."
+                android:inputType="text|textMultiLine"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/subjectLabel"
+                app:layout_constraintTop_toBottomOf="@+id/query_label" />
+
+            <TextView
+                android:id="@+id/subjectLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subject Sequence:"
+                app:layout_constraintBottom_toTopOf="@+id/subjectSeqArea"
+                app:layout_constraintTop_toBottomOf="@+id/querySeqArea" />
+
+            <EditText
+                android:id="@+id/subjectSeqArea"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:gravity="top"
+                android:hint="ATGCAT..."
+                android:inputType="text|textMultiLine"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/align_btn"
+                app:layout_constraintTop_toBottomOf="@+id/subjectLabel" />
+
+            <Button
+                android:id="@+id/align_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#3F51B5"
+                android:text="Align Sequences"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subjectSeqArea" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

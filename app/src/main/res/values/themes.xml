@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AlignTool" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+    <style name="Theme.AlignTool" parent="Base.Theme.AlignTool" />
+</resources>
